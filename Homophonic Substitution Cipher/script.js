@@ -187,7 +187,7 @@ function loadEncryptionRuleset() {
     createRespectiveReplacements();
     let visited = localStorage.getItem('visited');
     if (!visited) {
-        alert("You can view the encryption rules in the console.");
+        alert("You can view the encryption rules in the console.\nThis site does not support punctuation marks or commas as well as any other special characters.\nPlease limit your message to letters from A-Z and whitespaces.");
         localStorage.setItem('visited', true);
     }
 }
@@ -196,6 +196,7 @@ function loadEncryptionRuleset() {
 submitButton.onclick = () => {
     inputText = [];
     stringConfirmation = "";
+    let isInvalid = false;
     let text = document.getElementById("textInput").value;
     for (let character of text) {
         if (character != " ") {
@@ -205,7 +206,9 @@ submitButton.onclick = () => {
     for (let element of inputText) {
         stringConfirmation += element;
     }
-    encryptPlainText();
-    resetArrays();
+    if (stringConfirmation.length > 0) {
+        encryptPlainText();
+        resetArrays();
+    }
 }
 
