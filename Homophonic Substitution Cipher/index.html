@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cipher</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+    </head>
+    <body onload="loadEncryptionRuleset()">
+        <div class="header">
+            <h1 id="pagetitle">HOMOPHONIC SUBSTITUTION CIPHER</h1>
+        </div>
+        <textarea id="textInput" type="text"></textarea>
+        <br><br>
+        <button id="submitButton">ENCRYPT</button>
+        <br><br><br>
+        <h3>Your plain text was:</h3>
+        <div id="plaindiv"><br><br></div>
+        <br><br><br>
+        <h3>Your encrypted text is:</h3>
+        <div id="encrypteddiv"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
